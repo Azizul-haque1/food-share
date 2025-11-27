@@ -31,7 +31,7 @@ Users can browse foods, view details, and after logging in, add and manage foods
 ### 1. Clone repo
 
 ```bash
-git clone https://github.com/yourusername/food-share.git
+git clone https://github.com/Azizul-haque1/food-share.git
 cd food-share
 ```
 

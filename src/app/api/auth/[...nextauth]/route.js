@@ -15,7 +15,6 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // External Express server login
         try {
           // const res = await fetch("http://localhost:4000/login", {
           const res = await fetch(

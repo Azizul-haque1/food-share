@@ -5,7 +5,7 @@ import axiosInstance from "@/lib/axios";
 
 export default async function FeaturedFoods() {
 
-    const res = await axiosInstance('new-featured-foods')
+    const res = await axiosInstance('/new-featured-foods')
     const foods = await res.data
     console.log(foods);
 

@@ -3,7 +3,6 @@
 import { signIn } from "next-auth/react";
 import toast from "react-hot-toast";
 
-
 export default function LoginPage() {
 
     const handleCredentialsLogin = async (e) => {
@@ -27,9 +26,9 @@ export default function LoginPage() {
         }
     };
 
-    const handleGoogleLogin = async () => {
-        await signIn("google", { callbackUrl: "/dashboard" });
-    };
+    // const handleGoogleLogin = async () => {
+    //     await signIn("google");
+    // };
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -81,7 +80,7 @@ export default function LoginPage() {
 
                 {/* Secondary: Google Login */}
                 <button
-                    onClick={handleGoogleLogin}
+                    onClick={() => signIn('google')}
                     className="w-full border border-secondary text-secondary py-2 rounded-md hover:bg-secondary-light transition-colors flex items-center justify-center gap-2"
                 >
                     <svg
@@ -111,7 +110,7 @@ export default function LoginPage() {
 
                 <p className="text-center text-sm text-gray-500 mt-4">
                     Don’t have an account?{" "}
-                    <a href="/register" className="text-primary hover:underline">
+                    <a href="/auth/register" className="text-primary hover:underline">
                         Register
                     </a>
                 </p>

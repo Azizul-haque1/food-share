@@ -3,7 +3,8 @@ import axios from "axios";
 const axiosInstance = axios.create({
   baseURL:
     process.env.NEXT_PUBLIC_API_URL ||
-    "https://plate-share-server-sand.vercel.app/",
+    "https://plate-share-server-sand.vercel.app",
+  withCredentials: true,
   timeout: 10000,
 });
 

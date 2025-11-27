@@ -1,12 +1,12 @@
 "use client";
-
+import axiosInstance from "@/lib/axios";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 export default function RegisterPage() {
     const router = useRouter();
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
         const target = e.target;
 
@@ -14,6 +14,7 @@ export default function RegisterPage() {
         const email = target.email.value.trim();
         const password = target.password.value.trim();
         const confirmPassword = target.confirmPassword.value.trim();
+
 
         if (!name || !email || !password || !confirmPassword) {
             toast.error("All fields are required");
@@ -26,8 +27,14 @@ export default function RegisterPage() {
         }
 
         try {
+            const newUser = { name, email, password }
             console.log({ name, email, password });
-            toast.success("Registration successful!");
+            const res = await axiosInstance.post(`/register`, newUser)
+            const data = await res.data
+            if (data.result.insertedId) {
+                toast.success("Registration successful! Logging in...");
+
+            };
             router.push("/login");
         } catch (err) {
             toast.error("Registration failed. Please try again.");
@@ -48,7 +55,7 @@ export default function RegisterPage() {
                             type="text"
                             name="name"
                             id="name"
-                            placeholder="John Doe"
+                            placeholder="Your Name"
                             className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                             required
                         />
@@ -62,7 +69,7 @@ export default function RegisterPage() {
                             type="email"
                             name="email"
                             id="email"
-                            placeholder="you@example.com"
+                            placeholder="Enter your email"
                             className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                             required
                         />
@@ -106,7 +113,7 @@ export default function RegisterPage() {
 
                 <p className="text-center text-sm text-gray-500 mt-4">
                     Already have an account?{" "}
-                    <a href="/login" className="text-primary hover:underline">
+                    <a href="/auth/login" className="text-primary hover:underline">
                         Login
                     </a>
                 </p>

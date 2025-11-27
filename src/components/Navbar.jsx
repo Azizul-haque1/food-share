@@ -42,14 +42,14 @@ export default function Navbar() {
 
                         {!session && (
                             <>
-                                <Link href='/login'
+                                <Link href='/auth/login'
                                     // onClick={() => signIn("google")}
                                     className="px-4 py-2 border rounded hover:bg-gray-100"
                                 >
                                     Login
                                 </Link>
 
-                                <Link href='/register' className="px-4 py-2 bg-primary text-white rounded hover:bg-primary/70">
+                                <Link href='/auth/register' className="px-4 py-2 bg-primary text-white rounded hover:bg-primary/70">
                                     Register
                                 </Link>
                             </>

@@ -10,8 +10,7 @@ export default function Home() {
 
       <section className="w-10/12  mx-auto">
 
-        {/* <h1 className="text-5xl font-bold text-center">Our  Products </h1> */}
-        {/* <OurPorducts /> */}
+  
 
         <HomePage />
 

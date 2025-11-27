@@ -1,8 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
+
 import BackButton from "../../../components/BackButton";
 import axiosInstance from "@/lib/axios";
-
 
 
 export default async function FoodDetailsPage({ params }) {
@@ -10,11 +8,7 @@ export default async function FoodDetailsPage({ params }) {
     const res = await axiosInstance(`new-foods/${id}`)
     const food = res.data
     console.log('food', food);
-
-
-    // console.log(food);
-
-
+    // console.log(food)
     return (
         <div className="max-w-4xl mx-auto py-10 px-4">
 

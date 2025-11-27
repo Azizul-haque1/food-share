@@ -26,13 +26,13 @@ export default async function OurPorducts() {
             {/* Title */}
             <h2 className="card-title text-lg font-bold">Awesome Product</h2>
 
-            {/* Short Description (ellipsis) */}
+            
             <p className="text-sm text-gray-500 line-clamp-2">
               This is a short description of the product, limited to two lines
               and truncated with an ellipsis.
             </p>
 
-            {/* Price / Meta */}
+        
             <div className="text-xl font-semibold mt-2">$29.99</div>
 
             {/* Button */}

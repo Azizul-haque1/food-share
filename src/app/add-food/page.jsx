@@ -5,6 +5,7 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import loading from "../loading";
 
 const AddFoodPage = () => {
     const { data: session, status } = useSession();
@@ -16,25 +17,18 @@ const AddFoodPage = () => {
         }
 
         if (!session) {
-            router.push("/login");
+            router.push("/auth/login");
         }
     }, [session, status, router]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Access form data using e.target.name.value
-
         const foodName = e.target.food_name.value;
         const description = e.target.description.value;
         const category = e.target.category.value;
         const imageUrl = e.target.imageUrl.value;
         const foodQuantity = e.target.food_quantity.value;
-
-        // Log the form data
-        // console.log({
-        //     foodName, description, category, imageUrl, foodQuantity
-        // });
 
 
         const newFood = {
@@ -60,7 +54,7 @@ const AddFoodPage = () => {
     };
 
     if (status === "loading" || !session) {
-        return <div>Loading...</div>;
+        return;
     }
 
     return (

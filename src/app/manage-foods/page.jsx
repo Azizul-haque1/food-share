@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import axiosInstance from "@/lib/axios"; // Assuming you have this configured
+import axiosInstance from "@/lib/axios";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -12,19 +12,16 @@ const ManageFoodsPage = () => {
     const router = useRouter();
     const [refetch, setRefetch] = useState(false)
     const [foods, setFoods] = useState([]);
-    const [loading, setLoading] = useState(true); // To handle loading state
-
-
-
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         if (status === "loading") {
             return;
         }
 
         if (!session) {
-            router.push("/login");
+            router.push("/auth/login");
         } else {
-            // fetchFoods(); 
+            
             const fetchFoods = async () => {
                 try {
                     const res = await axiosInstance.get(`/new-my-food?email=${session.user.email}`);
@@ -53,18 +50,13 @@ const ManageFoodsPage = () => {
             setRefetch(!refetch)
         }
 
-        // if (window.confirm("Are you sure you want to delete this food item?")) {
-        //     try {
-        //         await axios.delete(`/ foods / ${foodId}`); // Using axios to delete a food item
-        //         setFoods(foods.filter((food) => food.id !== foodId)); // Update the UI after deletion
-        //     } catch (error) {
-        //         console.error("Error deleting food:", error);
-        //     }
-        // }
+        
     };
 
-    const handleEdit = (food) => {
-        router.push(`/ edit - food / ${food.id}`); // Redirect to the edit page
+
+
+    const handleView = (food) => {
+        router.push(`/available-foods/${food}`); 
     };
 
     if (loading || status === "loading" || !session) {
@@ -97,10 +89,10 @@ const ManageFoodsPage = () => {
                                 <td className="py-2 px-4">{food.food_quantity}</td>
                                 <td className="py-2 px-4 flex gap-2">
                                     <button
-                                        onClick={() => handleEdit(food)}
+                                        onClick={() => handleView(food._id)}
                                         className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/20 focus:outline-none focus:ring-2 focus:ring-primary"
                                     >
-                                        Edit
+                                        Veiw
                                     </button>
                                     <button
                                         onClick={() => handleDelete(food._id)}

@@ -15,8 +15,6 @@ export default function Navbar() {
         <li><NavLink href="#items" className="hover:text-green-600">Foods</NavLink></li>
         <li> <NavLink href="#testimonials" className="hover:text-green-600">People</NavLink></li>
         <li><NavLink href="#banner" className="hover:text-green-600">Start</NavLink></li>
-
-
     </>
 
     return (
@@ -43,7 +41,7 @@ export default function Navbar() {
                         {!session && (
                             <>
                                 <Link href='/auth/login'
-                                    // onClick={() => signIn("google")}
+                                    
                                     className="px-4 py-2 border rounded hover:bg-gray-100"
                                 >
                                     Login
@@ -55,7 +53,7 @@ export default function Navbar() {
                             </>
                         )}
 
-                        {/* If logged in → show profile */}
+                        
                         {session && (
                             <div className="relative">
                                 <img
@@ -67,7 +65,7 @@ export default function Navbar() {
                                 />
 
 
-                                {/* Dropdown */}
+                         
                                 {open && (
                                     <div className="absolute right-0 mt-3 bg-white rounded shadow-md w-50 py-2">
                                         <div className="px-4 py-2 border-b border-gray-300">

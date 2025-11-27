@@ -7,10 +7,8 @@ export default function LoginPage() {
 
     const handleCredentialsLogin = async (e) => {
         e.preventDefault();
-
-        const formData = new FormData(e.target);
-        const email = formData.get('email');
-        const password = formData.get('password');
+        const email = e.target.email.value;
+        const password = e.target.password.value;
 
         const result = await signIn("credentials", {
             redirect: false,
@@ -19,16 +17,15 @@ export default function LoginPage() {
         });
 
         if (result?.error) {
-            toast.error("Invalid email or password!"); // Show error toast
+            toast.error("Invalid email or password!");
         } else {
-            toast.success("Login successful! Redirecting..."); // Show success toast
-            window.location.href = "/dashboard"; // Redirect after success
+            toast.success("Login successful! Redirecting...");
+            window.location.href = "/";
         }
     };
 
-    // const handleGoogleLogin = async () => {
-    //     await signIn("google");
-    // };
+
+
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">

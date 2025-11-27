@@ -1,4 +1,3 @@
-
 # 🥗 Food Share
 
 Food Share is a simple food-sharing application built using **Next.js (App Router)**, **NextAuth.js**, and an **Express.js backend**.
@@ -7,22 +6,23 @@ Users can browse foods, view details, and after logging in, add and manage foods
 ---
 
 ## 🚀 Live Link
-[https://your-frontend.vercel.app]
 
+[https://food-share-bay.vercel.app]
 
 ---
 
 ## 🔑 Features
 
-* Landing page with multiple sections
-* Google + Credentials login (NextAuth)
-* Food list and details pages
-* Protected routes:
+- Landing page with multiple sections
+- Google + Credentials login (NextAuth)
+- Food list and details pages
+- Protected routes:
 
-  * **Add Food**
-  * **Manage Foods**
-* Responsive UI with clean layout
-* Express.js backend with MongoDB
+  - **Add Food**
+  - **Manage Foods**
+
+- Responsive UI with clean layout
+- Express.js backend with MongoDB
 
 ---
 
@@ -57,32 +57,31 @@ NEXT_PUBLIC_API_URL=http://localhost:4000
 npm run dev
 ```
 
-
 ---
 
 ## 📄 Routes Overview
 
 ### Public
 
-* `/` – Home
-* `/foods` – Food list
-* `/foods/[id]` – Food details
-* `/login`
-* `/register`
+- `/` – Home
+- `/foods` – Food list
+- `/foods/[id]` – Food details
+- `/login`
+- `/register`
 
 ### Protected
 
-* `/add-food`
-* `/manage-foods`
+- `/add-food`
+- `/manage-foods`
 
 ---
 
 ## 🛠 Tech
 
-* Next.js (App Router)
-* NextAuth.js
-* Express.js
-* MongoDB native driver
-* Tailwind CSS
+- Next.js (App Router)
+- NextAuth.js
+- Express.js
+- MongoDB native driver
+- Tailwind CSS
 
 ---

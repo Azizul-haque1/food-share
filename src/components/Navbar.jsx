@@ -12,9 +12,8 @@ export default function Navbar() {
 
     const links = <>
         <li><NavLink href="/available-foods" className="hover:text-green-600">Available Foods</NavLink></li>
-        <li><NavLink href="#items" className="hover:text-green-600">Foods</NavLink></li>
-        <li> <NavLink href="#testimonials" className="hover:text-green-600">People</NavLink></li>
-        <li><NavLink href="#banner" className="hover:text-green-600">Start</NavLink></li>
+        <li><NavLink href="/about" className="hover:text-green-600">About</NavLink></li>
+
     </>
 
     return (
@@ -41,7 +40,7 @@ export default function Navbar() {
                         {!session && (
                             <>
                                 <Link href='/auth/login'
-                                    
+
                                     className="px-4 py-2 border rounded hover:bg-gray-100"
                                 >
                                     Login
@@ -53,7 +52,7 @@ export default function Navbar() {
                             </>
                         )}
 
-                        
+
                         {session && (
                             <div className="relative">
                                 <img
@@ -65,7 +64,7 @@ export default function Navbar() {
                                 />
 
 
-                         
+
                                 {open && (
                                     <div className="absolute right-0 mt-3 bg-white rounded shadow-md w-50 py-2">
                                         <div className="px-4 py-2 border-b border-gray-300">

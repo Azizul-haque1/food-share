@@ -1,7 +1,9 @@
+'use client'
 import Link from 'next/link'
 import React from 'react'
+import { motion } from 'framer-motion';
 
-export default function Food({ food }) {
+export default function Food({ food, i }) {
     const {
         _id,
         food_name,
@@ -18,7 +20,15 @@ export default function Food({ food }) {
         description
     } = food
     return (
-        <div className='  shadow-xl  rounded-xl space-y-5' >
+        <motion.div
+
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 60, damping: 70, delay: i * 0.1 }}
+
+
+            className='  shadow-xl  rounded-xl space-y-5' >
             <div className="image w-full overflow-hidden h-[250px]  relative ">
                 <img
                     className='hover:scale-110 w-full  transition-transform object-cover  rounded-xl overflow-hidden'
@@ -49,6 +59,6 @@ export default function Food({ food }) {
                 '>View Details</Link>
 
             </div>
-        </div >
+        </motion.div >
     )
 }

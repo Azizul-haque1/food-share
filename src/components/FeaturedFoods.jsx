@@ -19,7 +19,12 @@ export default async function FeaturedFoods() {
             <div className="grid grid-cols-1 md:grid-cols-2 mt-10 lg:grid-cols-3 gap-6">
 
                 {
-                    foods.map(food => <Food key={food._id} food={food} />)
+                    foods.map((food, i) =>
+
+                        <Food key={food._id} i={i} food={food} />
+
+
+                    )
                 }
 
 

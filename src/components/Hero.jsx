@@ -1,3 +1,8 @@
+'use client'
+
+import { motion } from "motion/react"
+
+
 export default function Hero() {
     return (
         <section
@@ -6,7 +11,14 @@ export default function Hero() {
                 backgroundImage: "url('https://i.ibb.co.com/Tx08VX7j/bg.png')",
             }}
         >
-            <div className="max-w-2xl">
+            <motion.div
+                initial={{ opacity: 0, y: 300, }}
+                animate={{ opacity: 1, y: 0, }}
+                // exit={{ opacity: 0, y: -100 }}
+                // transition={{ ease: 'easeOut', duration: 1 }}
+                transition={{ type:'keyframes', stiffness: 60, damping: 70, }}
+
+                className="max-w-2xl">
                 <h1 className="text-5xl md:text-7xl font-serif font-semibold text-gray-900 mb-6">
                     Share your meals. <br /> Help your community.
                 </h1>
@@ -25,7 +37,7 @@ export default function Hero() {
                         Browse Shared Meals
                     </button>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 }

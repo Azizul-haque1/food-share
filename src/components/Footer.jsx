@@ -5,7 +5,7 @@ export default function Footer() {
         <footer className="w-full bg-[#6d28d9] text-white py-10 px-6 mt-20">
             <div className="w-10/12  mx-auto grid md:grid-cols-3 gap-8">
 
-            
+
                 <div>
                     <h3 className="font-semibold text-lg mb-3 text-secondary">
                         FoodShare
@@ -22,23 +22,23 @@ export default function Footer() {
                     </h4>
                     <ul className="space-y-2 text-gray-200">
                         <li>
-                            <Link href="#features" className="hover:text-secondary transition">
-                                Features
+                            <Link href="/auth/login" className="hover:text-secondary transition">
+                                Login
                             </Link>
                         </li>
                         <li>
-                            <Link href="#items" className="hover:text-secondary transition">
-                                Foods
+                            <Link href="/available-foods" className="hover:text-secondary transition">
+                                Avaiable foods
                             </Link>
                         </li>
                         <li>
-                            <Link href="#testimonials" className="hover:text-secondary transition">
-                                People
+                            <Link href="/add-food" className="hover:text-secondary transition">
+                                Add food
                             </Link>
                         </li>
                         <li>
-                            <Link href="#banner" className="hover:text-secondary transition">
-                                Start
+                            <Link href="/manage-foods" className="hover:text-secondary transition">
+                                Manage foods
                             </Link>
                         </li>
                     </ul>

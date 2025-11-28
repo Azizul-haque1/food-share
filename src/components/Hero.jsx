@@ -12,11 +12,11 @@ export default function Hero() {
             }}
         >
             <motion.div
-                initial={{ opacity: 0, y: 300, }}
+                initial={{ opacity: 0, y: 200, }}
                 animate={{ opacity: 1, y: 0, }}
-                // exit={{ opacity: 0, y: -100 }}
-                // transition={{ ease: 'easeOut', duration: 1 }}
-                transition={{ type:'keyframes', stiffness: 60, damping: 70, }}
+                exit={{ opacity: 0, y: -100 }}
+                transition={{ ease: 'easeOut', duration: 1 }}
+                // transition={{ type:'keyframes', stiffness: 60, damping: 70, }}
 
                 className="max-w-2xl">
                 <h1 className="text-5xl md:text-7xl font-serif font-semibold text-gray-900 mb-6">

@@ -1,7 +1,7 @@
 
 
 import Food from '@/components/Food'
-import axiosInstance from '@/lib/axios';
+import axiosInstance from '@/lib/axiosInstance';
 import React from 'react'
 
 export default async function page() {

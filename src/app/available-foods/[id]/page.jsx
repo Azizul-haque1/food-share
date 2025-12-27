@@ -1,5 +1,5 @@
 import FoodDetailsClient from "@/components/FoodDetailsClient";
-import axiosInstance from "@/lib/axios";
+import axiosInstance from "@/lib/axiosInstance";
 
 
 export default async function FoodDetailsPage({ params }) {

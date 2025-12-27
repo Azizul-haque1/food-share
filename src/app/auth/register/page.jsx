@@ -1,5 +1,5 @@
 "use client";
-import axiosInstance from "@/lib/axios";
+import axiosInstance from "@/lib/axiosInstance";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 

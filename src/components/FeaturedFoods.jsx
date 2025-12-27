@@ -1,7 +1,7 @@
 
 import Image from "next/image";
 import Food from "./Food";
-import axiosInstance from "@/lib/axios";
+import axiosInstance from "@/lib/axiosInstance";
 
 export default async function FeaturedFoods() {
 

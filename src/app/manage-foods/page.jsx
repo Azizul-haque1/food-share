@@ -3,7 +3,7 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import axiosInstance from "@/lib/axios";
+import axiosInstance from "@/lib/axiosInstance";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -21,7 +21,7 @@ const ManageFoodsPage = () => {
         if (!session) {
             router.push("/auth/login");
         } else {
-            
+
             const fetchFoods = async () => {
                 try {
                     const res = await axiosInstance.get(`/new-my-food?email=${session.user.email}`);
@@ -50,13 +50,13 @@ const ManageFoodsPage = () => {
             setRefetch(!refetch)
         }
 
-        
+
     };
 
 
 
     const handleView = (food) => {
-        router.push(`/available-foods/${food}`); 
+        router.push(`/available-foods/${food}`);
     };
 
     if (loading || status === "loading" || !session) {

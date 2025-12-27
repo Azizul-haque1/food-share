@@ -7,7 +7,6 @@ import NavLink from "./NavLink";
 
 export default function Navbar() {
     const { data: session } = useSession();
-    console.log(session);
     const [open, setOpen] = useState(false);
 
     const links = <>
@@ -17,7 +16,7 @@ export default function Navbar() {
     </>
 
     return (
-        <nav className="sticky top-0 w-full bg-white shadow z-50">
+        <nav className=" w-full bg-white shadow">
             <div className="md:w-10/12 mx-auto  py-4 flex items-center justify-between">
 
 

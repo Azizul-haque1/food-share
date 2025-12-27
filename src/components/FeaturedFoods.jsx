@@ -7,7 +7,7 @@ export default async function FeaturedFoods() {
 
     const res = await axiosInstance('/new-featured-foods')
     const foods = await res.data
-    console.log(foods);
+    // console.log(foods);
 
     return (
         <section id="featured-foods" className=" mx-auto px-6 py-20">

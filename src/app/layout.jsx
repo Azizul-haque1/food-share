@@ -27,14 +27,14 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable}  bg-zinc-50`}
       >
         <Providers>
-          <section className="">
+          <Toaster position="top-center" />
+          <section className=" sticky top-0 z-50">
             <Navbar />
           </section>
-          {children}
+          <main className="min-h-screen">{children}</main>
           <section>
             <Footer />
           </section>
-          <Toaster />
         </Providers>
       </body>
     </html>

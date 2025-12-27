@@ -1,9 +1,15 @@
 "use client";
 
-import { signIn } from "next-auth/react";
+import LoginButton from "@/components/LoginButton";
+import { signIn, useSession } from "next-auth/react";
 import toast from "react-hot-toast";
 
 export default function LoginPage() {
+
+    const { data } = useSession()
+
+    console.log('data', data);
+
 
     const handleCredentialsLogin = async (e) => {
         e.preventDefault();
@@ -76,7 +82,7 @@ export default function LoginPage() {
                 </div>
 
                 {/* Secondary: Google Login */}
-                <button
+                {/* <button
                     onClick={() => signIn('google')}
                     className="w-full border border-secondary text-secondary py-2 rounded-md hover:bg-secondary-light transition-colors flex items-center justify-center gap-2"
                 >
@@ -103,7 +109,9 @@ export default function LoginPage() {
                         />
                     </svg>
                     Continue with Google
-                </button>
+                </button> */}
+                <LoginButton />
+
 
                 <p className="text-center text-sm text-gray-500 mt-4">
                     Don’t have an account?{" "}
@@ -116,10 +124,3 @@ export default function LoginPage() {
     );
 }
 
-// Call ToastContainer once in your app (e.g., _app.js or in a Layout component)
-export const ToastContainer = () => (
-    <div>
-        {/* You can customize the placement or theme */}
-        <toast.ToastContainer position="top-center" autoClose={5000} />
-    </div>
-);

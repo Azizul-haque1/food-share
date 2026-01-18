@@ -28,7 +28,7 @@ export default function FoodDetailsClient({ food }) {
     const infoRef = useRef(null);
     const modalRef = useRef(null);
     const { data: session } = useSession();
-    const user = session.user;
+    const user = session?.user;
     console.log('user', user);
     console.log(session, 'session');
 
